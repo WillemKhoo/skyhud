@@ -2,6 +2,7 @@ package com.freereal;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

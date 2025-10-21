@@ -3,7 +3,7 @@
 	"package": "com.freereal.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+        "ActionBarMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
