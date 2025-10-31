@@ -18,6 +18,9 @@ public class ActionBarData {
             actionBarMessage.contains("❈")) {
             this.type = Type.NORMAL;
         }
+        else if (actionBarMessage.contains("Mana")) {
+            this.type = Type.ABILITY;
+        }
         else {
             this.type = Type.UNKNOWN;
         }
@@ -63,6 +66,7 @@ public class ActionBarData {
             e.printStackTrace();
         }
     }
+
 
     public String formatActionBarMessage(String text) {
         String newText = text;
