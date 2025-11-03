@@ -1,4 +1,4 @@
-package com.freereal.data_extractor;
+package com.freereal.data;
 
 public class SkyblockData {
     // Creating singleton

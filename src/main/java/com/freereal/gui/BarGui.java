@@ -1,6 +1,6 @@
 package com.freereal.gui;
 
-import com.freereal.data_extractor.SkyblockData;
+import com.freereal.data.SkyblockData;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
