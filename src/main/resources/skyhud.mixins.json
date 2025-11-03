@@ -3,7 +3,9 @@
 	"package": "com.freereal.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-        "ActionBarMixin"
+        "ActionBarMixin",
+        "gui_cancels.HeartsCancelMixin",
+        "gui_cancels.HungerCancelMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
