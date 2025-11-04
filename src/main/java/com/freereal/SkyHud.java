@@ -1,6 +1,9 @@
 package com.freereal;
 
+import com.freereal.data.ModConfig;
+import com.freereal.gson.GsonHandler;
 import com.freereal.gui.BarGui;
+import com.google.gson.Gson;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
@@ -13,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 public class SkyHud implements ModInitializer {
 	public static final String MOD_ID = "skyhud";
+    public static final String MOD_VERSION = "1.0";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -28,6 +32,13 @@ public class SkyHud implements ModInitializer {
         // Registering rendering for the health bars
         HudElementRegistry.attachElementBefore(VanillaHudElements.HEALTH_BAR, Identifier.of(SkyHud.MOD_ID, "before_health"), BarGui::render);
 
-		LOGGER.info("Hello Fabric world!");
-	}
+        // Initializing ModConfig from the config file (if there is one)
+        GsonHandler.init();
+
+        // Checking if the config file is up-to-date
+        if (ModConfig.getInstance().checkConfigVersion(MOD_VERSION)) {
+            ModConfig.getInstance().updateConfigVersion(MOD_VERSION);
+            GsonHandler.writeToFile();
+        }
+    }
 }
